@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+:root {
+  --mainPink: #ff1493;
+  --mainPink2: #e02180;
+  --mainYellow: rgb(249, 228, 148);
+  --mainWhite: #fff;
+  --mainBlack: #000;
+  --yellowTrans: rgba(249, 228, 148, 0.5);
+  --mainGrey: rgb(238, 238, 238);
+  --pastalPink: #ff9fa4;
+  --mainFont: 'Sriracha', cursive;
+  
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+.container {
+  padding-top: 200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer {
+  
+  font-family: var(--mainFont);
+  font-size: 1rem;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  position: fixed inherit;
+  width: 100%;
+  color: var(--mainPink);
+}
+
+/* NAVBAR */
+ul {
+  list-style: none;
+}
+.navbar {
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--mainWhite);
+  box-sizing: border-box;
+}
+
+.NavImg {
+  width: 50px;
+}
+
+.nav-link {
+  float: right;
+}
+.navbar-brand {
+  float: left;
+}
+

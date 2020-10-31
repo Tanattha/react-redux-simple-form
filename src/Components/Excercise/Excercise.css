@@ -1,0 +1,20 @@
+.exercise {
+  background-image: url("/img/homeBG.jpg");
+  padding-top: -10rem;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: 100vh;
+  
+}
+
+.exercise .header {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.icon-align {
+  vertical-align: -webkit-baseline-middle;
+}
