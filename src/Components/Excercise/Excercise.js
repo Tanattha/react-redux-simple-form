@@ -8,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { Form } from "react-final-form";
 import { TextField } from "@material-ui/core";
-import composeValidators from "../../composeValidators";
 import { useDispatch } from "react-redux";
 import { addToList, clearList } from "../../actions/formActions";
 import store from "../../store";
@@ -16,13 +15,7 @@ import "./Excercise.css";
 
 function Exercise() {
   const dispatch = useDispatch();
-  
-  const REGEX_VALID_EMAIL = /^[\w!#$%&'*+/=?`{|}~^-]+(?:\.[\w!#$%&'*+/=?`{|}~^-]+)*@↵(?:[A-Z0-9-]+\.)+[A-Z]{2,6}$/;
-  const isValidEmail = (value) => {
-    if (value && value.match(REGEX_VALID_EMAIL)) {
-      return value;
-    }
-  };
+  const REGEX_VALID_EMAIL = "[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,6}";
   const handleSubmit = () => {
     const user = {
       name: name,
@@ -32,17 +25,15 @@ function Exercise() {
     setName("");
     setEmail("");
   };
+  const handleList = () => {
+    dispatch(clearList());
+    forceUpdate((n) => !n);
+  };
 
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [, forceUpdate] = React.useState(0);
   const userList = store.getState().form.userList;
-
-  const handleList = () => {
-    dispatch(clearList());
-    forceUpdate(n => !n)
-  };
-
 
   return (
     <Grid className="exercise container" container spacing={3}>
@@ -77,7 +68,7 @@ function Exercise() {
                         variant="outlined"
                         required
                         type="email"
-                        validate={composeValidators(isValidEmail)}
+                        inputProps={{ pattern: REGEX_VALID_EMAIL }}
                       />
                     </div>
                     <Button
@@ -100,15 +91,15 @@ function Exercise() {
         <Card class="scroll">
           <CardHeader class="title" title="Submitted Form" />
           <CardContent>
-          <Button
-            padding={10}
-            color="secondary"
-            disabled={userList.length === 0}
-            variant="contained"
-            onClick={handleList}
-          >
-            Clear List
-          </Button>
+            <Button
+              padding={10}
+              color="secondary"
+              disabled={userList.length === 0}
+              variant="contained"
+              onClick={handleList}
+            >
+              Clear List
+            </Button>
             {userList.map((obj, index) => (
               <div key={index}>
                 <br />
