@@ -15,7 +15,7 @@ import "./Excercise.css";
 
 function Exercise() {
   const dispatch = useDispatch();
-  const REGEX_VALID_EMAIL = "[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,6}";
+  const REGEX_VALID_EMAIL = "[a-zA-Z.0-9_-]{3,}@[a-zA-Z0-9]{3,}[.]{1}[a-zA-Z]{2,6}";
   const handleSubmit = () => {
     const user = {
       name: name,
@@ -64,7 +64,7 @@ function Exercise() {
                         onChange={(e) => setEmail(e.target.value)}
                         id="outlined-error-helper-text"
                         label="Email"
-                        placeholder="Required"
+                        placeholder="xxx@xxx.xxx"
                         variant="outlined"
                         required
                         type="email"
