@@ -10,15 +10,16 @@ import { Form } from "react-final-form";
 import { TextField } from "@material-ui/core";
 import composeValidators from "../../composeValidators";
 import { useDispatch } from "react-redux";
-import { addToList } from "../../actions/formActions";
+import { addToList, clearList } from "../../actions/formActions";
 import store from "../../store";
 import "./Excercise.css";
 
 function Exercise() {
   const dispatch = useDispatch();
-  const REGEX_VALID_EMAIL = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+  
+  const REGEX_VALID_EMAIL = /^[\w!#$%&'*+/=?`{|}~^-]+(?:\.[\w!#$%&'*+/=?`{|}~^-]+)*@↵(?:[A-Z0-9-]+\.)+[A-Z]{2,6}$/;
   const isValidEmail = (value) => {
-    if (value && REGEX_VALID_EMAIL) {
+    if (value && value.match(REGEX_VALID_EMAIL)) {
       return value;
     }
   };
@@ -34,7 +35,14 @@ function Exercise() {
 
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [, forceUpdate] = React.useState(0);
   const userList = store.getState().form.userList;
+
+  const handleList = () => {
+    dispatch(clearList());
+    forceUpdate(n => !n)
+  };
+
 
   return (
     <Grid className="exercise container" container spacing={3}>
@@ -45,7 +53,7 @@ function Exercise() {
             return (
               <form onSubmit={handleSubmit}>
                 <Card>
-                  <CardHeader class='title' title="Form" />
+                  <CardHeader class="title" title="Form" />
                   <CardContent>Please fill out this form.</CardContent>
                   <CardActions>
                     <div>
@@ -72,7 +80,12 @@ function Exercise() {
                         validate={composeValidators(isValidEmail)}
                       />
                     </div>
-                    <Button color="primary" disabled={!email} variant="contained" type="submit">
+                    <Button
+                      color="primary"
+                      disabled={!email}
+                      variant="contained"
+                      type="submit"
+                    >
                       Submit
                     </Button>
                   </CardActions>
@@ -84,17 +97,28 @@ function Exercise() {
       </Grid>
 
       <Grid item xs={6}>
-        <Card class='scroll' >
-          <CardHeader class='title' title="Submitted Form" />
-          <CardContent >
+        <Card class="scroll">
+          <CardHeader class="title" title="Submitted Form" />
+          <CardContent>
+          <Button
+            padding={10}
+            color="secondary"
+            disabled={userList.length === 0}
+            variant="contained"
+            onClick={handleList}
+          >
+            Clear List
+          </Button>
             {userList.map((obj, index) => (
               <div key={index}>
                 <br />
                 <Typography>
-                  <strong>Full Name: </strong>{obj.name}
+                  <strong>Full Name: </strong>
+                  {obj.name}
                 </Typography>
                 <Typography>
-                  <strong>Email: </strong>{obj.email}
+                  <strong>Email: </strong>
+                  {obj.email}
                 </Typography>
               </div>
             ))}

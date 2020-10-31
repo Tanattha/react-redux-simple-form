@@ -18,3 +18,7 @@
 .icon-align {
   vertical-align: -webkit-baseline-middle;
 }
+
+.remove-btn {
+  padding: "10px"
+}
