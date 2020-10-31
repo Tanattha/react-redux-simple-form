@@ -18,13 +18,22 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
-
+.scroll {
+  overflow: auto;
+  background: var(--mainWhite);
+  height: 500px;
+  border-radius: 5px;
+}
+.title {
+  color: var(--pastalPink);
+  padding-left: 12px;
+  padding-top: 5px;
+}
 a {
   text-decoration: none;
 }
-
-
 
 .container {
   padding-top: 200px;
@@ -70,3 +79,8 @@ ul {
   float: left;
 }
 
+.btn {
+  background-color: var(--mainBlack);
+  color: var(--pastalPink)
+  
+}

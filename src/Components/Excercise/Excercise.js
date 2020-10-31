@@ -45,7 +45,7 @@ function Exercise() {
             return (
               <form onSubmit={handleSubmit}>
                 <Card>
-                  <CardHeader title="Form" />
+                  <CardHeader class='title' title="Form" />
                   <CardContent>Please fill out this form.</CardContent>
                   <CardActions>
                     <div>
@@ -72,7 +72,7 @@ function Exercise() {
                         validate={composeValidators(isValidEmail)}
                       />
                     </div>
-                    <Button disabled={!email} variant="contained" type="submit">
+                    <Button color="primary" disabled={!email} variant="contained" type="submit">
                       Submit
                     </Button>
                   </CardActions>
@@ -84,17 +84,17 @@ function Exercise() {
       </Grid>
 
       <Grid item xs={6}>
-        <Card>
-          <CardHeader title="Submitted Form" />
-          <CardContent>
+        <Card class='scroll' >
+          <CardHeader class='title' title="Submitted Form" />
+          <CardContent >
             {userList.map((obj, index) => (
               <div key={index}>
                 <br />
                 <Typography>
-                  <strong>Full Name: {obj.name}</strong>
+                  <strong>Full Name: </strong>{obj.name}
                 </Typography>
                 <Typography>
-                  <strong>Email: {obj.email}</strong>
+                  <strong>Email: </strong>{obj.email}
                 </Typography>
               </div>
             ))}
