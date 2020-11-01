@@ -1,6 +1,6 @@
 # react-redux-simple-form
 
-This app was built with React and Redux. Display with HTML, CSS and Material UI. This's a sample form app that allows you to submit name and email to the list.
+This app was built with React and Redux. Display with HTML, CSS and Material UI. This's a sample form app that allows you to submit your name and email to the list.
 
 <img src="./public/img/example-pic.png" width="800" height="400" />
 
