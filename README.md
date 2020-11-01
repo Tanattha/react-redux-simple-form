@@ -36,4 +36,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 https://www.pexels.com/<br />
 [Font: Sriracha](https://fonts.google.com/specimen/Sriracha)
 
+<<<<<<< HEAD
 and everything else from google!
+=======
+and everything else from google!
+>>>>>>> c8af1e136695c074255035ad2a4169bed6a76b51
