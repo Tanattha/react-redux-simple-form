@@ -45,7 +45,7 @@ function Exercise() {
               <form onSubmit={handleSubmit}>
                 <Card>
                   <CardHeader class="title" title="Form" />
-                  <CardContent>Please fill out this form.</CardContent>
+                  <CardContent >Please fill out this form.</CardContent>
                   <CardActions>
                     <div>
                       <TextField
@@ -54,7 +54,7 @@ function Exercise() {
                         name="name"
                         type="text"
                         id="outlined-error-helper-text"
-                        label="Name"
+                        label="Full Name"
                         placeholder="..."
                         variant="outlined"
                       />

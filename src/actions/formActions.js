@@ -23,7 +23,6 @@ export const addToList = (user) => {
 export const clearList = () => {
   const userList = [];
   localStorage.setItem("userList", JSON.stringify(userList));
-
   return {
     type: CLEAR_LIST,
     payload: { userList },
