@@ -2,7 +2,7 @@
 
 This app was built with React and Redux. Display with HTML, CSS and Material UI. This's a sample form app that allows you to submit name and email to the list.
 
-<img src="./public/img/example-pic.png" width="500" height="350" />
+<img src="./public/img/example-pic.png" width="600" height="350" />
 
 ## Live App
 
