@@ -20,7 +20,7 @@ export default class About extends Component {
               />
             </a>
             &nbsp;&nbsp; &nbsp;&nbsp;
-            <a href="https://github.com/Tanattha">
+            <a href="https://github.com/Tanattha/react-redux-simple-form">
               <img
                 src="../img/logo3.png"
                 target="_blank"
